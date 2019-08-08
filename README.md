@@ -21,7 +21,7 @@ export tools="/rugpfs/fs0/vgl/store/vglshare/tools/VGP-tools"
 ### Mash
 	conda activate base
 	python /rugpfs/fs0/vgl/store/vglshare/edwin/scripts/fetch_PB.py <genomeId>
-	conda activate VGP
+	conda activate mash
 	ls *.bam > input.fofn
 	sh $VGP_PIPELINE/mash/_submit_mash.sh <genomeId> vgl
 
