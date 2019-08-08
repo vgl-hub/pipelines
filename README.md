@@ -13,8 +13,6 @@ export tools="/rugpfs/fs0/vgl/store/vglshare/tools/VGP-tools"
 ### N50 QC
 	conda activate VGP
 	$VGP_PIPELINE/stats/asm_stats.sh <fasta file> <genome size bp> c/p
-or for simple output:
-	/rugpfs/fs0/vgl/store/ofedrigo/tools/assembly-stats_bin/assembly-stats <fasta file>
 
 ### MashMap
 	conda activate mash
