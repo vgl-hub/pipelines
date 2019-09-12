@@ -13,7 +13,7 @@ export tools="/rugpfs/fs0/vgl/store/vglshare/tools/VGP-tools"
 ### genomescope
 	conda activate VGP
 	assumes *_R?_001.fastq.gz in same directory
-	sh $VGP_PIPELINE/meryl2/_submit_meryl2_10x.sh 31 <genomeId>
+	sh $VGP_PIPELINE/meryl2/_submit_meryl2_10x.sh 31 <genomeId> <partition> <cpus>
 
 ### N50 QC
 	conda activate VGP
