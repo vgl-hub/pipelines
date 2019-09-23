@@ -10,7 +10,7 @@ export root="/rugpfs/fs0/vgl/store/vglshare/edwin"
 export VGP_PIPELINE="/rugpfs/fs0/vgl/store/vglshare/tools/VGP-pipeline"
 export tools="/rugpfs/fs0/vgl/store/vglshare/tools/VGP-tools"
 
-### VGP pipeline
+# VGP pipeline
 ## arrow polishing
 	sh $VGP_PIPELINE/arrow/_submit_arrow.sh <asm> <path to *.subreads.bam files> <partition>
 
@@ -20,7 +20,7 @@ export tools="/rugpfs/fs0/vgl/store/vglshare/tools/VGP-tools"
 	ln -s <bionano.cmap> DLE1.cmap
 	sh $VGP_PIPELINE/bionano/_submit_hybrid_scaffold_dle1.sh <genomeId> <partition> <cpus>
 
-### Data and asm QC	
+# Data and asm QC	
 ## genomescope
 	conda activate VGP
 	assumes *_R?_001.fastq.gz in same directory
@@ -41,7 +41,7 @@ export tools="/rugpfs/fs0/vgl/store/vglshare/tools/VGP-tools"
 	conda activate busco
 	sh $VGP_PIPELINE/busco/_submit_busco.sh <genome fasta>
 	
-## Misc tools
+# Misc tools
 ## Minimap2 (raw PB reads)
 	conda activate VGP
 	ls *.fasta.gz > input.fofn
