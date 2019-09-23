@@ -1,4 +1,4 @@
-# pipelines
+# PIPELINES
 
 Partitions:
 hpc
