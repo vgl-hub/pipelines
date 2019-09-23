@@ -14,7 +14,14 @@ export tools="/rugpfs/fs0/vgl/store/vglshare/tools/VGP-tools"
 ## arrow polishing
 	sh $VGP_PIPELINE/arrow/_submit_arrow.sh <asm> <path to *.subreads.bam files> <partition>
 
-## Bionano Solve
+## purge dups
+	sh $VGP_PIPELINE/purge_dups/_submit_purge_dups.sh <asm> <path to *.subreads.bam files> <partition>
+
+## scaff10x
+	conda activate VGP
+	sh $VGP_PIPELINE/scaff10x/_submit_scaff10x.sh <asm> <path to *.subreads.bam files> <partition>
+	
+## solve
 	conda activate bionano
 	ln -s <assembly.fasta> asm.fasta
 	ln -s <bionano.cmap> DLE1.cmap
