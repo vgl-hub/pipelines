@@ -11,8 +11,6 @@ export VGP_PIPELINE="/rugpfs/fs0/vgl/store/vglshare/tools/VGP-pipeline"
 export tools="/rugpfs/fs0/vgl/store/vglshare/tools/VGP-tools"
 
 # VGP pipeline
-## arrow polishing
-	sh $VGP_PIPELINE/arrow/_submit_arrow.sh <asm> <path to *.subreads.bam files> <partition>
 
 ## purge dups
 	sh $VGP_PIPELINE/purge_dups/_submit_purge_dups.sh <asm> <path to *.subreads.bam files> <partition>
@@ -25,6 +23,12 @@ export tools="/rugpfs/fs0/vgl/store/vglshare/tools/VGP-tools"
 	conda activate bionano
 	sh $VGP_PIPELINE/bionano/_submit_hybrid_scaffold_dle1.sh <asm> <cmap> <partition>
 	sh $VGP_PIPELINE/bionano/_submit_trimNs.sh <asm> <partition>
+
+# salsa
+	conda activate VGP
+
+## arrow polishing
+	sh $VGP_PIPELINE/arrow/_submit_arrow.sh <asm> <path to *.subreads.bam files> <partition>
 
 # Data and asm QC	
 ## genomescope
