@@ -17,15 +17,16 @@ export tools="/rugpfs/fs0/vgl/store/vglshare/tools/VGP-tools"
 
 ## scaff10x
 	conda activate VGP
-	sh $VGP_PIPELINE/scaff10x/_submit_scaff10x.sh <asm> <path to *.subreads.bam files> <partition>
+	sh $VGP_PIPELINE/scaff10x/_submit_scaff10x.sh <asm> <path to 10X fastq files> <partition>
 	
 ## solve
 	conda activate bionano
 	sh $VGP_PIPELINE/bionano/_submit_hybrid_scaffold_dle1.sh <asm> <cmap> <partition>
 	sh $VGP_PIPELINE/bionano/_submit_trimNs.sh <asm> <partition>
 
-# salsa
+## salsa
 	conda activate VGP
+	sh $VGP_PIPELINE/salsa/_submit_salsa2.sh <asm> <path to Hi-C fastq files> <partition>
 
 ## arrow polishing
 	sh $VGP_PIPELINE/arrow/_submit_arrow.sh <asm> <path to *.subreads.bam files> <partition>
