@@ -23,9 +23,8 @@ export tools="/rugpfs/fs0/vgl/store/vglshare/tools/VGP-tools"
 	
 ## solve
 	conda activate bionano
-	ln -s <assembly.fasta> asm.fasta
-	ln -s <bionano.cmap> DLE1.cmap
-	sh $VGP_PIPELINE/bionano/_submit_hybrid_scaffold_dle1.sh <genomeId> <partition> <cpus>
+	sh $VGP_PIPELINE/bionano/_submit_hybrid_scaffold_dle1.sh <asm> <cmap> <partition>
+	sh $VGP_PIPELINE/bionano/_submit_trimNs.sh <asm> <partition>
 
 # Data and asm QC	
 ## genomescope
