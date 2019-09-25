@@ -29,7 +29,7 @@ export tools="/rugpfs/fs0/vgl/store/vglshare/tools/VGP-tools"
 	sh $VGP_PIPELINE/salsa/_submit_salsa2.sh <asm> <path to Hi-C fastq files> <partition>
 
 ## arrow polishing
-	sh $VGP_PIPELINE/arrow/_submit_arrow.sh <asm> <path to *.subreads.bam files> <partition>
+	sh $VGP_PIPELINE/arrow/_submit_arrow.sh <asm> <path to *.subreads.bam files> <partition> <cpus>
 
 # Data and asm QC	
 ## genomescope
