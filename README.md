@@ -66,5 +66,5 @@ export tools="/rugpfs/fs0/vgl/store/vglshare/tools/VGP-tools"
 # Misc tools
 ## Minimap2 (raw PB reads)
 	conda activate VGP
-	ls *.fasta.gz > input.fofn
+	ls *.fast?.gz > input.fofn
 	sh $VGP_PIPELINE/minimap2/_submit_minimap2.sh <reference fasta>
