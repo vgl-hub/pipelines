@@ -13,11 +13,15 @@ export tools="/rugpfs/fs0/vgl/store/vglshare/tools/VGP-tools"
 # VGP pipeline
 
 ## purge dups
-	sh $VGP_PIPELINE/purge_dups/_submit_purge_dups.sh <asm> <path to *.subreads.bam files> <partition>
+	conda activate VGP
+	sh $VGP_PIPELINE/purge_dups/_submit_purge_dups.sh <asm> <path to *.fastq files> <ploidy_mode> <rm_OVLP_only> <partition> <cpus>
+
+### example:
+	sh $VGP_PIPELINE/purge_dups/_submit_purge_dups.sh ../sCarCar2_p1_arrowed.fasta /vggpfs/fs3/vgl/scratch/vglshare/sandbox/ofedrigo/sCarCar2/assembly_vgp/intermediates/purge_dups/fastq/ diploid false vgl 32
 
 ## scaff10x
 	conda activate VGP
-	sh $VGP_PIPELINE/scaff10x/_submit_scaff10x.sh <asm> <path to 10X fastq files> <partition>
+	sh $VGP_PIPELINE/scaff10x/_submit_scaff10x.sh <asm> <partition> <path to 10X fastq files>
 	
 ## solve
 	conda activate bionano
@@ -29,6 +33,7 @@ export tools="/rugpfs/fs0/vgl/store/vglshare/tools/VGP-tools"
 	sh $VGP_PIPELINE/salsa/_submit_salsa2.sh <asm> <path to Hi-C fastq files> <partition>
 
 ## arrow polishing
+	conda activate VGP
 	sh $VGP_PIPELINE/arrow/_submit_arrow.sh <asm> <path to *.subreads.bam files> <partition> <cpus>
 
 # Data and asm QC	
