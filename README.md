@@ -74,7 +74,7 @@ export tools="/rugpfs/fs0/vgl/store/vglshare/tools/VGP-tools"
 	python $VGP_PIPELINE/blast/parseblast.py m64055_190930_192559.subreads_blast_results.tb Chondrichthyes,Teleostei,Coelacanthiforme,Tetrapoda,Platyhelminthes,Protostomia,Viridiplantae,Fungi,Bacteria
 	
 # Misc tools
-## Minimap2 (raw PB reads)
+## Minimap2 (raw PB reads or Iso-seq)
 	conda activate VGP
 	ls *.fast?.gz > input.fofn
-	sh $VGP_PIPELINE/minimap2/_submit_minimap2.sh <reference fasta>
+	sh $VGP_PIPELINE/minimap2/_submit_minimap2.sh <reference fasta> <datatype: genome or isoseq> <cpus> <partition>
