@@ -30,7 +30,7 @@ export tools="/rugpfs/fs0/vgl/store/vglshare/tools/VGP-tools"
 
 ## salsa
 	conda activate VGP
-	sh $VGP_PIPELINE/salsa/_submit_salsa2.sh <asm> <path to Hi-C fastq files> <partition>
+	sh $VGP_PIPELINE/salsa/_submit_salsa_2.2.sh <asm> <path to Hi-C fastq files> <partition>
 
 ## arrow polishing
 	conda activate VGP
