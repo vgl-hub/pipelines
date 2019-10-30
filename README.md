@@ -38,6 +38,10 @@ export tools="/rugpfs/fs0/vgl/store/vglshare/tools/VGP-tools"
 
 # Data and asm QC	
 
+## fastqc
+	conda activate VGP
+	sh $VGP_PIPELINE/qc/_submit_fastqc.sh <directory where fastq.gz files are> <partition>
+
 ## genomescope
 	conda activate VGP
 	assumes *_R?_001.fastq.gz in same directory
