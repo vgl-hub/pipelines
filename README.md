@@ -69,8 +69,10 @@ export tools="/rugpfs/fs0/vgl/store/vglshare/tools/VGP-tools"
 ## Blast a subset of reads
 	conda activate VGP
 	sh $VGP_PIPELINE/blast/_submit_blast.sh <bam file> <partition> <cpus> <#reads>
+	if you want to directly blast a fasta file: sh $VGP_PIPELINE/blast/_submit_blast_fasta_.sh <fasta file> <partition> <cpus> <#reads>
 	cat *blast_results_* > <blast output file>
 	python $VGP_PIPELINE/blast/parseblast.py <blast output file> <list of taxonomic groups>
+	
 	
 ### example:
 	sh $VGP_PIPELINE/blast/_submit_blast.sh /ru-auth/local/home/smrtanalysis2/store/data_root/r64055_20190930_191719/1_A01/m64055_190930_192559.subreads.bam hpc 24 1000
@@ -82,3 +84,7 @@ export tools="/rugpfs/fs0/vgl/store/vglshare/tools/VGP-tools"
 	conda activate VGP
 	ls *.fast?.gz > input.fofn
 	sh $VGP_PIPELINE/minimap2/_submit_minimap2.sh <reference fasta> <datatype: genome or isoseq> <cpus> <partition>
+
+## RepeatMasker
+	conda activate VGP
+	sh $VGP_PIPELINE/repeatmasker/_submit_repeatmasker.sh <reference fasta>
