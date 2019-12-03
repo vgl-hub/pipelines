@@ -42,6 +42,10 @@ export tools="/rugpfs/fs0/vgl/store/vglshare/tools/VGP-tools"
 	conda activate VGP
 	sh $VGP_PIPELINE/qc/_submit_fastqc.sh <directory where fastq.gz files are> <partition>
 
+## plot read length distribution
+    conda activate VGP
+    sh $tools/plots/_submit_readlength.sh <fasta file>
+
 ## genomescope
 	conda activate VGP
 	assumes *_R?_001.fastq.gz in same directory
