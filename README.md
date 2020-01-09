@@ -30,7 +30,8 @@ export tools="/rugpfs/fs0/vgl/store/vglshare/tools/VGP-tools"
 
 ## salsa
 	conda activate VGP
-	sh $VGP_PIPELINE/salsa/_submit_salsa_2.2.sh <asm> <path to Hi-C fastq files> <partition>
+	cat <asm> | sed 's/:/_/g' | sed 's/-/_/g' > <asm_renamed>
+	sh $VGP_PIPELINE/salsa/_submit_salsa_2.2.sh <asm_renamed> <path to Hi-C fastq files> <partition>
 
 ## arrow polishing
 	conda activate VGP
@@ -54,6 +55,10 @@ export tools="/rugpfs/fs0/vgl/store/vglshare/tools/VGP-tools"
 ## N50 QC
 	conda activate VGP
 	$VGP_PIPELINE/stats/asm_stats.sh <fasta file> <genome size bp> c/p
+
+## QV using kmers	
+	conda activate VGP
+	$tools/meryl/scripts/spectra-cn.sh
 
 ## MashMap
 	conda activate mash
