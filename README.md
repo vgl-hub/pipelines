@@ -14,10 +14,10 @@ export tools="/rugpfs/fs0/vgl/store/vglshare/tools/VGP-tools"
 
 ## purge dups
 	conda activate VGP
-	sh $VGP_PIPELINE/purge_dups/_submit_purge_dups.sh <asm> <path to *.fastq files> <ploidy_mode> <rm_OVLP_only> <partition> <cpus>
+	sh $VGP_PIPELINE/purge_dups/_submit_purge_dups.sh <asm> <path to *.fasta files> <ploidy_mode> <rm_OVLP_only> <partition> <cpus>
 
 ### example:
-	sh $VGP_PIPELINE/purge_dups/_submit_purge_dups.sh ../sCarCar2_p1_arrowed.fasta /vggpfs/fs3/vgl/scratch/vglshare/sandbox/ofedrigo/sCarCar2/assembly_vgp/intermediates/purge_dups/fastq/ diploid false vgl 32
+	sh $VGP_PIPELINE/purge_dups/_submit_purge_dups.sh ../sCarCar2_p1_arrowed.fasta /vggpfs/fs3/vgl/scratch/vglshare/sandbox/ofedrigo/sCarCar2/assembly_vgp/intermediates/purge_dups/fasta/ diploid false vgl 32
 
 ## scaff10x
 	conda activate VGP
