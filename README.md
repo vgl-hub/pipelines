@@ -56,6 +56,11 @@ export tools="/rugpfs/fs0/vgl/store/vglshare/tools/VGP-tools"
 	conda activate VGP
 	$VGP_PIPELINE/stats/asm_stats.sh <fasta file> <genome size bp> c/p
 
+## kat
+	conda activate kat
+	ls <path to 10X data>/* > input.fofn
+	sh $VGP_PIPELINE/kat/_submit_kat_comp.sh <asm fasta file>
+
 ## QV using kmers	
 	conda activate VGP
 	$tools/meryl/scripts/spectra-cn.sh
