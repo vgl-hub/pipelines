@@ -12,6 +12,16 @@ export tools="/rugpfs/fs0/vgl/store/vglshare/tools/VGP-tools"
 
 # VGP pipeline
 
+## falcon and falcon_unzip
+	tmux new -s mysession
+	conda activate VGP
+	bam2fasta *.subreads.bam
+	conda activate denovo_asm
+	ls *.fasta.gz > input.fofn
+	fc_run fc_run.cf
+	ls *.subreads.bam > input_bam.fofn
+	fc_unzip fc_unzip.cfg
+
 ## purge dups
 	conda activate VGP
 	sh $VGP_PIPELINE/purge_dups/_submit_purge_dups.sh <asm> <path to *.fasta files> <ploidy_mode> <rm_OVLP_only> <partition> <cpus>
