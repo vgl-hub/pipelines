@@ -111,4 +111,6 @@ export tools="/rugpfs/fs0/vgl/store/vglshare/tools/VGP-tools"
 
 ## RepeatMasker
 	conda activate VGP
-	sh $VGP_PIPELINE/repeatmasker/_submit_repeatmasker.sh <reference fasta>
+	sh $VGP_PIPELINE/repeatmasker/_submit_repeatmasker.sh <reference fasta> <repeat modeler fasta file>
+	
+## Isoseq
