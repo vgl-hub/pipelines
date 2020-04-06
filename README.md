@@ -50,8 +50,12 @@ export tools="/rugpfs/fs0/vgl/store/vglshare/tools/VGP-tools"
 # Data and asm QC	
 
 ## fastqc
+    [to be fixed: output directory]
 	conda activate VGP
 	sh $VGP_PIPELINE/qc/_submit_fastqc.sh <directory where fastq.gz files are> <partition>
+	
+## trimming Illumina reads
+	sh $VGP_PIPELINE/qc/_submit_trimming.sh <directory where fastq.gz files are> <partition>
 
 ## plot read length distribution
     conda activate VGP
