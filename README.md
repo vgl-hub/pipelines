@@ -88,6 +88,7 @@ export tools="/rugpfs/fs0/vgl/store/vglshare/tools/VGP-tools"
 	sh $VGP_PIPELINE/kat/_submit_kat_comp.sh <asm fasta file>
 
 ## MERQURY	
+	conda activate merqury
 	export MERQURY="/rugpfs/fs0/vgl/store/vglshare/tools/VGP-tools/merqury"
 	export PATH=$PATH:/rugpfs/fs0/vgl/store/vglshare/tools/VGP-tools/meryl/Linux-amd64/bin	
 	
