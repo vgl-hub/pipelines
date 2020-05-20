@@ -74,9 +74,22 @@ export tools="/rugpfs/fs0/vgl/store/vglshare/tools/VGP-tools"
 	ls <path to 10X data>/* > input.fofn
 	sh $VGP_PIPELINE/kat/_submit_kat_comp.sh <asm fasta file>
 
-## QV using kmers	
-	conda activate VGP
-	$tools/meryl/scripts/spectra-cn.sh
+## MERQURY	
+	export MERQURY="/rugpfs/fs0/vgl/store/vglshare/tools/VGP-tools/merqury"
+	export PATH=$PATH:/rugpfs/fs0/vgl/store/vglshare/tools/VGP-tools/meryl/Linux-amd64/bin	
+	
+	### Build meryl DB
+	WGS Illumina data
+	ls *.fastq.gz > input.fofn # iportant: no full path in symlink!
+	sbatch --partition=vgl $tools/merqury/_submit_build.sh 21 input.fofn <out_prefix> mem=F
+	or
+	10X data
+	ls *.R1.fastq.gz > > R1.fofn # iportant: no full path in symlink!
+	ls *.R2.fastq.gz > > R2.fofn # iportant: no full path in symlink!
+	sbatch --partition=vgl $tools/merqury/_submit_build_10X.sh 21 R1.fofn R2.fofn <out_prefix> mem=F
+	
+	### run merqury
+	sbatch --partition=vgl $tools/merqury/_submit_merqury.sh <out_prefix>.meryl/ pri.fasta [alt.fasta] <output>
 
 ## MashMap
 	conda activate mash
