@@ -60,6 +60,19 @@ export tools="/rugpfs/fs0/vgl/store/vglshare/tools/VGP-tools"
     conda activate VGP
     sh $tools/plots/_submit_readlength.sh <fasta file>
 
+## bam to fastq
+	conda activate VGP
+	sbatch -e err.log -o out.log <<"EOF"
+	#!/bin/bash
+	#partition=vgl
+	#SBATCH -J bam2fastq
+	#SBATCH -n 10
+	#SBATCH -t 10:00:00
+	for qry in *.bam; do
+	bam2fastq $qry -o $(basename "$qry"); 
+	done;
+	EOF
+	
 ## genomescope
 	conda activate VGP
 	assumes *_R?_001.fastq.gz in same directory
