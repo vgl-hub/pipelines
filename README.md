@@ -25,6 +25,8 @@ export tools="/rugpfs/fs0/vgl/store/vglshare/tools/VGP-tools"
 ## purge dups
 	conda activate VGP
 	sh $VGP_PIPELINE/purge_dups/_submit_purge_dups.sh <asm> <path to *.fasta files> <ploidy_mode> <rm_OVLP_only> <partition> <cpus>
+	# a purge_dups_ccs.sh script is available when working with ccs reads
+	sh $VGP_PIPELINE/purge_dups/_submit_purge_dups_ccs.sh <asm> <path to *.fasta files> <ploidy_mode> <rm_OVLP_only> <partition> <cpus>
 
 ### example:
 	sh $VGP_PIPELINE/purge_dups/_submit_purge_dups.sh ../sCarCar2_p1_arrowed.fasta /vggpfs/fs3/vgl/scratch/vglshare/sandbox/ofedrigo/sCarCar2/assembly_vgp/intermediates/purge_dups/fasta/ diploid false vgl 32
