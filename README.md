@@ -44,6 +44,9 @@ export tools="/rugpfs/fs0/vgl/store/vglshare/tools/VGP-tools"
 ## salsa
 	conda activate VGP
 	sed 's/:/_/g' <asm> > <asm_renamed>
+	# for the newer (as of april 2022) salsa version, with original coordinates AGP:
+	sh $VGP_PIPELINE/salsa/_submit_salsa_2.2_origcoords.sh <asm_renamed> <path to Hi-C fastq files> <partition> <cpus>
+	# if you want the older salsa version:
 	sh $VGP_PIPELINE/salsa/_submit_salsa_2.2.sh <asm_renamed> <path to Hi-C fastq files> <partition> <cpus>
 
 ## arrow polishing
